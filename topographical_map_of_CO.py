@@ -11,7 +11,7 @@ given point.
 File Name: topographical_map_of_CO.py
 Author: Caleb Smith
 Internet Sources: W3Schools
-Associated Documents: CO_elevations_in_feet.txt
+Associated Documents: CO_elevations_feet.txt
 
 """
 
