@@ -8,13 +8,11 @@ word is revealed to them. The user can input any five-letter word, each
 input counts as a guess unless there are numbers in the word or if the word
 is not equal to exaclty five characters.
 
-    Filename: smith_caleb_project_2.py
+    Filename: wordle.py
     Author: Caleb Smith
     Date: 1/18/2023
-    Course: COMP 1352
-    Assignment: Project 2 - A Word Game
-    Collaborators: None
     Internet Source: http://gwicks.net/justwords.html
+    Associated Documents: usaWords.txt
 
 """
 
