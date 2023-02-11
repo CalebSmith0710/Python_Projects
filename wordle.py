@@ -1,4 +1,6 @@
 """
+Some bugs need to be fixed
+
 A game of wordle using "usaWords.txt" to populate a list with strings
 and using random to select a random index from the list as the target word,
 the user has six chances to guess the word before the game is over and the
@@ -6,22 +8,11 @@ word is revealed to them. The user can input any five-letter word, each
 input counts as a guess unless there are numbers in the word or if the word
 is not equal to exaclty five characters.
 
-This is a second submission fixing a bug in which the user could type the letter
-'y' in their guess and it would affect the hint that would be given to the user.
-For example, in the word 'glace' there are no y's, but if the user were to 
-type 'y' as the third character and got none of the other characters correct,
-the hint would display as "BBYBB"
-
-Also corrected the guess input to take all capital letters from the user and
-turn them into lowercase.
-
-    Filename: smith_caleb_project_2.py
+    Filename: wordle.py
     Author: Caleb Smith
     Date: 1/18/2023
-    Course: COMP 1352
-    Assignment: Project 2 - A Word Game
-    Collaborators: None
     Internet Source: http://gwicks.net/justwords.html
+    Associated Documents: usaWords.txt
 
 """
 
