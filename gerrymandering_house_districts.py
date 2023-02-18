@@ -12,6 +12,7 @@ in the main code block.
     Authors: Caleb Smith
     Date: 2/18/2023
     Internet Source: https://www.quantamagazine.org/the-math-behind-gerrymandering-and-wasted-votes-20171012/
+    Associated Documents: 1976-2020votes.txt
 """
 
 election_results = {}
