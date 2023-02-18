@@ -1,12 +1,12 @@
-election_results = {}
-election_results_list = []
-line_index = 0
+import json
+import collections
 
 class Elections:
     def __init__(self, list: list):
         self.list = list
 
-    def wasted_votes(self, list)->str:
+    def wasted_votes(self)->str:
+        list = self.list
         democrat_votes = sum(list[1:-1:2])
         republican_votes = sum(list[2:-1:2])
         num_districts = sum(list[0:-1:2])
@@ -23,37 +23,30 @@ class Elections:
 
         return f"{num_districts} districts.\nWasted Democratic votes: {wasted_dem_votes}\nWasted Republican votes: {wasted_rep_votes}\nEfficiency gap: {efficiency_gap}"
 
+election_results = collections.defaultdict(dict)
 
 with open("1976-2020votes.txt", "r") as a_file:
     for line in a_file:
         line = line.strip().split(",")
 
-        list = []
-        for element in line[2::]:
-            list.append(int(element))
+        year = line[0]
+        state = line[1].lower()
+        results = [int(result) for result in line[2:]]
 
-        election_results_objects = [(Elections(list))]
-        election_results_list.append(election_results_objects)
-        
-        if line[0] not in election_results:
-            election_results[f"{line[0]}"] = {f"{line[1]}": f"{election_results_list[line_index]}"}
-        else:
-            election_results[f"{line[0]}"][f"{line[1]}"] = (election_results_list[line_index])
-        
-        line_index += 1
+        election = Elections(results)
+        election_results[year][state] = election
 
+election_results = dict(election_results)
 
-        
+year = input("What year would you like to examine?: ")
+state = input("What state would you like to examine?: ").lower()
 
-# year = input("What year would you like to examine?: ")
-# state = input("What state would you like to examine?: ").lower()
+selected_results = election_results[year][state]
 
-year_and_state = election_results["1976"]["ALABAMA"]
+print(selected_results.wasted_votes())
 
-#year_and_state.wasted_votes()
-
-print(year_and_state)
-print(type(year_and_state))
+# print(year_and_state)
+# print(type(year_and_state))
 
 
 # voting_data = [[331621,105955],[316925,182547],[194122,220634],[173945,285606],[161600,249013],[250314,175192],[250525,159301]]
